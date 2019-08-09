@@ -1,0 +1,478 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #ededed;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    overflow: hidden;
+    background-image: linear-gradient(45deg, rgba(9, 27, 75, 0.85), rgba(4, 16, 27, 0.8) 55%), url(../images/background1.jpeg);
+    background-size: cover;
+}
+
+
+/* ------------------------------------------------------------- */
+/* Common */
+/* ------------------------------------------------------------- */
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.btn {
+    background-color: #e67e22;
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    margin: 0 5px;
+    border-radius: 12px;
+    display: inline-block;
+    width: 190px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.disabled {pointer-events:none}
+
+.btn:hover,
+.btn:active {
+    background-color: #d35400;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------------------------- */
+
+header {
+    background-image: linear-gradient(45deg, rgba(2, 33, 64, 0.8) 55%, rgba(45, 95, 93, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 10vh;
+    transition: all .5s;
+}
+
+/* header:hover,
+header:active {
+    background-image: linear-gradient(45deg,rgba(45, 95, 93, 0.85) 55%, rgba(2, 33, 64, 0.8) );
+} */
+
+header nav .title {
+    position: absolute;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+    color: #ededed;
+    margin-left: 10px;
+    font-size: 150%;
+    margin-top: 15px;
+}
+
+header nav .title:hover,
+header nav .title:active {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    mask-image: unset;
+    mask-size: unset;
+    animation: shine 3s infinite;
+}
+
+.logo {
+    height: 50px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-right: 0px;
+}
+
+.main-nav li {
+    margin-right: 30px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    font-size: 110%;
+    font-weight: 700;
+    color: #ffffff;
+    transition: border-bottom 0.4s;
+    padding: 3px 0;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #cccccc;
+}
+
+.heading-main-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 80%;
+}
+
+@keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* Content */
+/* ------------------------------------------------------------- */
+.content {
+    width: 100%;
+    height: 90vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+}
+
+.col {
+    height: 100%;
+}
+
+/* ------------------------------------------------------------- */
+/* GameInfo */
+/* ------------------------------------------------------------- */
+.info {
+    background-color: rgba(58, 58, 58, .89);
+    border-radius: 7px;
+}
+
+.info ul li {
+    list-style: none;
+    position: relative;
+    width: 90%;
+}
+
+.info .best-score {
+    height: 20vh;
+}
+
+.info .top-score {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 00%)
+}
+
+.info .best-score p {
+    text-align: center;
+    color: #cccccc;
+    font-size: 150%;
+    padding-top: 20px;
+}
+
+.info .best-score h2 {
+    text-align: center;
+    color: #f5e027;
+    font-size: 300%;
+    margin-top: 10px;
+}
+
+.medal {
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.info ul li p {
+    position: absolute;
+    display: inline-block;
+    top: 40%;
+    margin-left: 15px;
+    color: #cccccc
+}
+
+/* ------------------------------------------------------------- */
+/* Game content */
+/* ------------------------------------------------------------- */
+
+.game-content {
+    /* background-color: cornflowerblue; */
+    position: relative;
+}
+
+.game-content .start-game {
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 2;
+}
+
+.game-content .start-game .start-button {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    font-size: 150%;
+    width: 35%;
+    transform: translate(-50%, -50%)
+}
+
+.game-content .start-game #noti-text {
+    color: #fdfcfc;
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    font-size: 250%;
+    transform: translate(-50%, 50%)
+}
+
+.game-content .option-game {
+    height: 480px;
+}
+
+.game-content .option-game {
+    /* position: absolute; */
+    top: 100%;
+    left: 50%;
+    transform: translate(0%, 100%);
+    visibility: hidden;
+}
+
+.option-game #big-apple-score {
+    margin: 16px 0;
+    position: absolute;
+    top: 0%;
+    left: 85%;
+    color: #f5e027;
+    font-size: 200%;
+    font-weight: 400;
+    transform: translate(-20%, 0%);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.option-game input[type="range"] {
+    outline: 0;
+    border: 0;
+    border-radius: 500px;
+    width: 500px;
+    max-width: 100%;
+    margin: 24px 0;
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+    left: 25%;
+    transform: translate(-20%, 0%);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .option-game input[type="range"] {
+        overflow: hidden;
+        height: 30px;
+        -webkit-appearance: none;
+        background-color: #e0e0e0;
+    }
+
+    .option-game input[type="range"]::-webkit-slider-runnable-track {
+        height: 30px;
+        -webkit-appearance: none;
+        color: #444;
+        margin-top: 0px;
+        transition: box-shadow 0.2s ease-in-out;
+    }
+
+    .option-game input[type="range"]::-webkit-slider-thumb {
+        width: 30px;
+        -webkit-appearance: none;
+        height: 30px;
+        cursor: ew-resize;
+        background: #fff;
+        box-shadow: -340px 0 0 320px #ff0000, inset 0 0 0 30px #ff0000;
+        border-radius: 50%;
+        transition: box-shadow 0.2s ease-in-out;
+        position: relative;
+    }
+
+    .option-game input[type="range"]:hover::-webkit-slider-thumb,
+    .option-game input[type="range"]:active::-webkit-slider-thumb {
+        background: #fff;
+        box-shadow: -340px 0 0 320px #ff0000, inset 0 0 0 3px #ff0000;
+    }
+}
+
+canvas {
+    border: 1px solid black;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: all .5s;
+    z-index: 1;
+}
+
+.canvas-blur {
+    filter: brightness(50%) blur(3px);
+}
+
+#game {
+    background: rgb(236, 235, 235);
+}
+
+/* ------------------------------------------------------------- */
+/* Game setting */
+/* ------------------------------------------------------------- */
+
+.game-setting {
+    background-color: rgba(58, 58, 58, .89);
+    border-radius: 7px;
+    /* visibility: hidden; */
+}
+
+.game-setting .user-score {
+    height: 20vh;
+}
+
+.game-setting .user-score p {
+    text-align: center;
+    color: #cccccc;
+    font-size: 120%;
+    padding-top: 20px;
+}
+
+.game-setting .user-score h2 {
+    text-align: center;
+    color: #f5e027;
+    font-size: 200%;
+    margin-top: 10px;
+    font-weight: 400
+}
+
+.game-control {
+    position: relative;
+    padding: 20px;
+}
+
+.game-control p {
+    display: inline-block;
+    margin: 5px 5px;
+    color: #cccccc;
+}
+
+/* .game-control .btn {
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    font-size: 150%;
+    padding: 4px;
+} */
+
+.game-control .btn:hover .tooltiptext,
+.game-control .btn:active .tooltiptext {
+    visibility: visible;
+}
+
+.game-control .btn .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #cccccc;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    font-size: 50%;
+    white-space: nowrap;
+}
+
+.custom-select {
+    margin: 10px 0px 10px 50px;
+    position: relative;
+    text-align: center
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #565656;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 10%;
+    border: 6px solid transparent;
+    transform: scale(1.8,1.5);
+    border-color: rgb(187, 187, 187) transparent transparent transparent;
+    transition: all 0.5s;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent rgb(187, 187, 187) transparent;
+    display: block;
+    /* position: fixed; */
+    top: 10px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: rgb(96, 96, 96);
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------------- */
+/* game */
+/* ------------------------------------------------------------- */

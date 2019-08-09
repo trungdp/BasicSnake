@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Basic snack</title>
+    <link rel = "icon" href = "./library/images/logo.ico" type = "image/x-icon"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./library/css/grid.css">
+    <link rel="stylesheet" href="./library/css/style.css">
+    <link rel="stylesheet" href="./library/css/overlayStyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <a href="#header"><img class="logo" src="/library/images/logo.ico" alt="logo"></a>
+            <a href="#header" class="title">Basic Snake</a>
+            <ul class="main-nav" id="top-navigation">
+                <li><a href="#" onclick="openContactNav()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content">
+        <div class="row">
+            <div class="col span-1-of-5 info">
+                <div class="best-score">
+                    <p>Best Score</p>
+                    <h2 id="best-score"></h2>
+                </div>
+                <ul>
+                    <li><img class="medal" src="/library/images/gold-medal.svg" alt="The First">
+                        <p id="first-place-name"></p>
+                    </li>
+                    <li><img class="medal" src="/library/images/silver-medal.svg" alt="The Second">
+                        <p id="second-place-name"></p>
+                    </li>
+                    <li><img class="medal" src="/library/images/brone-medal.svg" alt="The Third">
+                        <p id="third-place-name"></p>
+                    </li>
+                </ul>
+                <a class="btn top-score" onclick="openTopScoreNav()">Top 8</a>
+            </div>
+
+            <div class="col span-3-of-5 game-content">
+                <canvas width="660" height="480" id="game"></canvas>
+                <div class="start-game">
+                    <h1 id="noti-text"></h1>
+                    <a href="#" class="btn start-button" id="start-button" onclick="startDidTouch()">Start</a>
+                </div>
+                <div class="background-game"> </div>
+                <div class="option-game">
+                    <input id="big-apple-countdown" type="range" value="0" disabled>
+                    <p id="big-apple-score">4 </p>
+                </div>
+
+
+            </div>
+
+            <div class="col span-1-of-5 game-setting">
+                <div class="user-score">
+                    <p>Your Score</p>
+                    <h2 id="user-score">0</h2>
+                </div>
+                <div class="game-control">
+                    <div class='setting'>
+                        <p>Level</p>
+                        <!-- <a class="btn" id="game-level">1</a> -->
+                        <div class="custom-select" >
+                            <select id="level-select">
+                                <option value="1">1</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay">
+            <!-- Top 8 score-->
+            <div id="top-score-overlay" class="top-score-overlay">
+                <div class="title">
+                    <h2>Top 8 Highest Score</h2>
+                    <a href="#" class="closebtn" onclick="closeTopScoreNav()">&times;</a>
+                </div>
+                <div class="container">
+                    <table>
+                        <colgroup>
+                            <col id="col-rank">
+                            <col id="col-name">
+                            <col id="col-score">
+                        </colgroup>
+                        <tbody id="table-body"> </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- contact overlay -->
+            <div id="contact-overlay" class="contact-overlay">
+                <div class="title">
+                    <h2>Contact</h2>
+                    <a href="#" class="closebtn" onclick="closeContactNav()">&times;</a>
+                </div>
+                <div class="container">
+                    <p>About me</p>
+                    <ul class="information">
+                        <li><i class="fas fa-signature"></i>Dang Phuong Trung</li>
+                        <li><i class="fas fa-graduation-cap"></i>DaLat University</li>
+                        <li><i class="fas fa-phone small-icon"></i>(+084)033-495-2304</li>
+                    </ul>
+                    <p>More</p>
+                    <ul class="social-icons">
+                        <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100016035575833"><i  class="fab fa-facebook"></i><span>Facebook</span></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/dangphuongtrung/"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                        <li><a target="_blank" href="https://github.com/trungdp"><i class="fab fa-github"></i><span>GitHub</span></a> </li>
+                        <li><a target="_blank" href="#"><i class="fas fa-envelope small-icon"></i><span>Email</span></a></li>
+                    </ul>
+                    <div class="feedback">
+                        <p>Feedback</p>
+                        <form action="/feedback" method="POST">
+                            <div class="row">
+                                <div class="col span-3-of-4">
+                                    <textarea id="feedback-area" name="feedback" placeholder="Enter your feedback" rows="3"></textarea>
+                                </div>
+                                <div class="col span-1-of-4 submit-col">
+                                    <input class="btn" id="send-feedback" type="submit" value="Send">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- login overlay -->
+            <div id="login-overlay" class="login-overlay">
+                <div class="title">
+                    <h2>Login</h2>
+                    <a href="#" class="closebtn" onclick="closeLoginNav()">&times;</a>
+                </div>
+                <div class="container">
+                    
+                </div>
+            </div>
+
+            <!-- Enter name overlay -->
+            <div id="enter-name-overlay" class="enter-name-overlay">
+                <div class="title">
+                    <h2>Enter Your Name</h2>
+                    <a href="#" class="closebtn" onclick="closeEnterNameNav()">&times;</a>
+                </div>
+                <div class="container">
+                    <form id="enter-name">
+                        <input autocomplete="off" id="input-name" type="text" placeholder="Your Name">
+                        <span id="input-name-noti">Name</span>
+                        <input class="btn" type="submit" value='Use This Name'>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./library/js/slider.js"></script>
+    <script src="./library/js/levelSlider.js"></script>
+    <script src="./library/js/overlay.js"></script>
+    <script src="./library/js/snake.js"></script>
+</body>
+
+</html>

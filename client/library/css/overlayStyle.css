@@ -1,0 +1,375 @@
+/* ------------------------------------------------------------- */
+/* OVERLLAY */
+/* ------------------------------------------------------------- */
+#overlay{
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    transition: all 0.2s;
+    white-space: nowrap;
+    z-index: 999;
+}
+
+.top-score-overlay .title,
+.contact-overlay .title,
+.login-overlay .title,
+.enter-name-overlay .title{
+    height: 20%;
+    position: relative;
+}
+
+.top-score-overlay,
+.contact-overlay,
+.login-overlay,
+.enter-name-overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    word-wrap: none;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.top-score-overlay a:hover,
+.top-score-overlay a:focus,
+.contact-overlay a:hover,
+.contact-overlay a:focus,
+.login-overlay a:hover,
+.login-overlay a:focus,
+.enter-name-overlay a:focus,
+.enter-name-overlay a:hover {
+    color: #f1f1f1;
+}
+
+.top-score-overlay h2,
+.contact-overlay h2,
+.login-overlay h2,
+.enter-name-overlay h2{
+    position: absolute;
+    color: #fad920;
+    font-weight: 500;
+    font-size: 200%;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+/* Position the close button (top right corner) */
+.top-score-overlay .closebtn,
+.contact-overlay .closebtn,
+.login-overlay .closebtn,
+.enter-name-overlay .closebtn {
+    position: absolute;
+    font-size: 300%;
+    color: #818181;
+    text-decoration: none;
+    font-weight: 500;
+    right: 20px;
+    display: inline-block;
+}
+
+/* ------------------------------------------------------------- */
+/* TOP SCORE OVERLLAY */
+/* ------------------------------------------------------------- */
+.top-score-overlay{
+    left: 0;
+    background-image: linear-gradient(90deg, rgba(2, 33, 64, 0.95) 45%, rgba(57, 57, 58, 0.8));
+}
+
+table {
+	width: 95%;
+    border-collapse: collapse;
+    border-radius: 7px;
+    overflow: hidden;
+    position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+td{
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    position: relative;
+}
+
+th{
+    padding: 10px;
+    text-align: center;
+    color: #fad920;
+}
+
+td .medal{
+    width: 65px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+tr:hover, tr:active {
+    background-color: rgba(255,255,255,0.3);
+}
+
+#col-rank{
+    width: 150px;
+}
+
+#col-score{
+    width: 150px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .top-score-overlay a {
+        font-size: 20px
+    }
+
+    .top-score-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+
+    .contact-overlay a {
+        font-size: 20px
+    }
+
+    .contact-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* CONTACT OVERLLAY */
+/* ------------------------------------------------------------- */
+
+.contact-overlay {
+    right: 0;
+    background-image: linear-gradient(45deg, rgba(57, 57, 58, 0.8) 25%, rgba(2, 33, 64, 0.95) );
+}
+
+.contact-overlay .container{
+    position: relative;
+    margin-left: 15px;
+}
+
+.contact-overlay .container .information,
+.contact-overlay .container .social-icons{
+    padding: 10px;
+    list-style: none;
+}
+
+.contact-overlay .container p, .feedback p{
+    margin: 0px 15px;
+    font-size: 120%;
+    color: #f1f1f1;
+    display: inline;
+    font-weight: 500
+}
+
+.contact-overlay .container img:hover,
+.contact-overlay .container img:active{
+    top: 15%;
+    left: 80%;
+    transform: scale(1.4) translate(-50%,-50%);
+}
+
+.contact-overlay .container .information{
+    margin: 0px 45px;
+    list-style: none;
+    color: #a1a1a1;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-55%,0%)
+}
+
+.contact-overlay .container .information li{
+    margin: 5px 5px;
+    list-style: none;
+    color: #a1a1a1
+}
+
+.contact-overlay .container .information li i{
+    margin: 10px 25px;
+    color: #a1a1a1;
+    font-size: 120%;
+}
+
+.contact-overlay .container .social-icons{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,100%)
+}
+
+.contact-overlay .container .social-icons li{
+    margin: 5px 10px;
+    list-style: none;
+    color: #a1a1a1;
+    display: inline;
+    position: relative;
+}
+
+.contact-overlay .container .social-icons li i{
+    margin: 10px 5px;
+    color: #a1a1a1;
+    font-size: 250%;
+    transition: all .7s;
+}
+
+.contact-overlay .container .social-icons li span{
+    position: absolute;
+    color: #a1a1a1;
+    font-size: 80%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,100%);
+    visibility: hidden;
+    transition: all .4s;
+}
+
+.contact-overlay .container .social-icons li:hover span {
+    visibility: visible;
+}
+
+.contact-overlay .container .social-icons li i:hover,
+.contact-overlay .container .social-icons li i:active{
+    transform: scale(1.4);
+    color: #f1f1f1;
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.7) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    mask-image: unset;
+    mask-size: unset;
+    animation: shine 1.5s infinite;
+}
+
+.feedback {
+    margin-top: 100px;
+}
+
+.feedback form {
+    margin: 10px;
+}
+
+.feedback #feedback-area{
+    resize: none;
+    width: 95%;
+    padding: 5px;
+    background: rgba(2, 33, 64, .3);
+    border-radius: 10px;
+    border: 2px solid #a1a1a1;
+    font-size: 120%;
+    outline: none;
+    color: #a1a1a1;
+    overflow: hidden;
+}
+
+.feedback .submit-col{
+    position: relative;
+    height: 80px;
+}
+
+.feedback input[type=submit]{
+    top:60%;
+    left:40%;
+    border-radius: 7px;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    font-size: 100%;
+    color: #f1f1f1;
+    width: 90%;
+}
+
+/* .feedback #feedback-area::placeholder{ */
+    /* padding: 5px; */
+/* } */
+
+@keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* LOGIN OVERLLAY */
+/* ------------------------------------------------------------- */
+
+.login-overlay {
+    right: 0;
+    background-image: linear-gradient(45deg, rgba(57, 57, 58, 0.8) 25%, rgba(2, 33, 64, 0.95));
+}
+
+/* ------------------------------------------------------------- */
+/* ENTER NAME OVERLLAY */
+/* ------------------------------------------------------------- */
+
+.enter-name-overlay {
+    right: 0;
+    background-image: linear-gradient(45deg, rgba(57, 57, 58, 0.8) 25%, rgba(2, 33, 64, 0.95));
+}
+
+.enter-name-overlay .container{
+    position: relative;
+    height: 100%;
+}
+
+.enter-name-overlay .container #enter-name input[type='text']{
+    color: #f1f1f1;;
+    background-color: rgba(2, 33, 64, .3);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    display: block;
+    padding: 10px;
+    font-size: 230%;
+    border: 2px solid #a1a1a1;
+    border-radius: 15px;
+    text-align: center;
+    outline: none;
+    transform: translate(-50%,50%);
+    width: 75%;
+}
+
+.container #enter-name input[type='text']::placeholder{
+    color: #a1a1a1;
+}
+
+.container #enter-name #input-name-noti{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    padding: 10px 10px;
+    color: #fad920;
+    font-size: 130%;
+    text-align: center;
+    transform: translate(-50%,100%);
+    display: none;
+}
+
+.container #enter-name input[type='submit']{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    display: block;
+    padding: 15px 10px;;
+    font-size: 130%;
+    text-align: center;
+    outline: none;
+    transform: translate(-50%,100%);
+}
