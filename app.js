@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })  
 
 //Chỉ ra đường dẫn chứa css, js, images...
-app.use(express.static(path.join(__dirname, 'Client')));
+app.use(express.static(path.join(__dirname, 'client')));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
