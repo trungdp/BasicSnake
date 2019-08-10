@@ -56,6 +56,8 @@ var bigApple = {
     height: grid * 2
 };
 
+var ar = new Array(37, 38, 39, 40);
+
 function speedFromLevel() {
     switch (level) {
         case 2:     return 120;
@@ -214,8 +216,6 @@ function startGame() {
         drawSnake();
     }, speedFromLevel())
 }
-
-var ar = new Array(37, 38, 39, 40);
 
 var x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -474,8 +474,7 @@ function drawSnake() {
         }
 
         if (index == 0) {
-            for (var i = index + 1; i < snake.cells.length; i++) {
-                // va chạm 
+            for (var i = index + 1; i < snake.cells.length; i++) { // va chạm 
                 if (cell.center.x === snake.cells[i].center.x && cell.center.y === snake.cells[i].center.y) {
                     snakeDeath();
                     break;
@@ -491,10 +490,8 @@ $( "#enter-name" ).submit(function( event ) {
         var name = $("#input-name" ).val().split(' ')[0];
         $("#top-navigation").prepend('<li><a href="#" onclick="openEnterNameNav()" id="user-name">' + name + '</a></li>');
         $("#input-name" ).val("");
-        console.log('OK');
         return;
     }
-    console.log('not valid');
     $("#input-name-noti").text( "Please Enter Your Name" ).show().fadeOut( 3000 );
     event.preventDefault();
 });
