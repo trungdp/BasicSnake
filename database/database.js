@@ -1,26 +1,8 @@
-// var MongoClient = require('mongodb').MongoClient;
-// const Define = require('../src/define');
-// var dbName = 'DLChat'
-// var url = Define.url;
-
-
-// var mongoose = require('mongoose');
-// mongoose.connect("mongodb+srv://trungtrs:Trungtrs1998@@cluster0-hc27e.azure.mongodb.net/test?retryWrites=true&w=majority/basicsnake");
-
-// var db = mongoose.connection;
-
-// db.on('error', console.error.bind(console, 'connection error:'));
-
-// db.once('open', function() {
-//   console.log("Connection Successful!");
-// });
-
-
-
 let mongoose = require('mongoose');
 
-const server = 'mongodb+srv://trungtrs:Trungtrs1998@cluster0-hc27e.azure.mongodb.net/test?retryWrites=true&w=majority'; // REPLACE WITH YOUR DB SERVER
+const server = 'mongodb+srv://trungtrs:Trungtrs1998@cluster0-hc27e.azure.mongodb.net'; // REPLACE WITH YOUR DB SERVER
 const database = 'basicsnake';
+const UserModel = require('./userModel');
 
 class Database {
     constructor() {

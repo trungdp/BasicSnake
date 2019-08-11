@@ -496,6 +496,18 @@ $( "#enter-name" ).submit(function( event ) {
     event.preventDefault();
 });
 
+$('#form-feedback').submit(event => {
+    if (($('#feedback-area').val() != null && $('#feedback-area').val() != "") &&
+        ($("#user-name").text() != null && $("#user-name").text() != "")) {
+        $.post('/feedback', 
+                { name: $("#user-name").text(), content: $('#feedback-area').val() },
+            sendFeedback());
+    } else {
+        alert('Enter your name and feedback to send feedback!');
+    }
+    event.preventDefault();
+})
+
 function startDidTouch(){
     if (document.getElementById('user-name')){
         countDown();
@@ -505,6 +517,7 @@ function startDidTouch(){
 }
 
 function fillTopScore(data ) {
+    $("#table-body").empty();
     JSON.parse(data)['data'].forEach((item, index)=>{
         var rank = index + 1;
         switch (rank) {
@@ -535,6 +548,11 @@ function postScore(data, status) {
     fillTopScore(data);
 }
 
+function sendFeedback() {
+    alert('Thank you for your feedback ☺');
+    $('#feedback-area').val("");
+}
+
 function gameOver(){
     $('.start-game').show();
     $('#start-button').text('New Game');
@@ -544,16 +562,15 @@ function gameOver(){
 
     $('#start-button').removeClass('disabled');
     $('.game-control').removeClass('disabled');
-    $.post('https://trssnake.herokuapp.com/user-score', { name: $('#user-name').text(), score: parseInt($("#user-score").text()) }, postScore);
+    $.post('/user-score', { name: $('#user-name').text(), score: parseInt($("#user-score").text()) }, postScore);
 }
 
 $(document).ready(
     function(){
         document.addEventListener("click", closeAllSelect);
-
         resetSnake()
         $('#game').addClass('canvas-blur');
 
-        $.get('https://trssnake.herokuapp.com/top-score', fillTopScore);
+        $.get('/top-score', fillTopScore);
     }
 )

@@ -4,7 +4,7 @@
 
 <head>
     <title>Basic snack</title>
-    <link rel = "icon" href = "/library/images/logo.ico" type = "image/x-icon"> 
+    <link rel = "icon" href = "./library/images/logo.ico"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="/library/css/grid.css">
@@ -54,10 +54,8 @@
                 <div class="background-game"> </div>
                 <div class="option-game">
                     <input id="big-apple-countdown" type="range" value="0" disabled>
-                    <p id="big-apple-score">4 </p>
+                    <p id="big-apple-score"></p>
                 </div>
-
-
             </div>
 
             <div class="col span-1-of-5 game-setting">
@@ -125,13 +123,13 @@
                     </ul>
                     <div class="feedback">
                         <p>Feedback</p>
-                        <form action="">
+                        <form id="form-feedback">
                             <div class="row">
                                 <div class="col span-3-of-4">
                                     <textarea id="feedback-area" placeholder="Enter your feedback" rows="3"></textarea>
                                 </div>
                                 <div class="col span-1-of-4 submit-col">
-                                    <input class="btn" id="send-feedback" type="submit" value="Send">
+                                    <input class="btn" type="submit" value="Send">
                                 </div>
                             </div>
                         </form>

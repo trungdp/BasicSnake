@@ -290,6 +290,7 @@ tr:hover, tr:active {
     font-size: 100%;
     color: #f1f1f1;
     width: 90%;
+    outline: none;
 }
 
 /* .feedback #feedback-area::placeholder{ */
