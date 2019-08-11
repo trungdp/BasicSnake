@@ -357,7 +357,7 @@ function drawBackground(){
 
 function drawApple(){
     context.drawImage(snakeImage, partImage.apple.x, partImage.apple.y, 64, 64, apple.x, apple.y, grid, grid);
-    if (bigApple.x > 0 && bigApple.y > 0){
+    if (bigApple.x >= 0 && bigApple.y >= 0){
         scale = scale == 3 ? 0 : 3;
         context.drawImage(bigAppleImage, 0, 0, 128, 128, 
             bigApple.x + scale, bigApple.y + scale, bigApple.width - 2 * scale , bigApple.height  - 2 * scale);
