@@ -565,9 +565,20 @@ function gameOver(){
     $.post('/user-score', { name: $('#user-name').text(), score: parseInt($("#user-score").text()) }, postScore);
 }
 
+function addListener(){
+    $('#contact-nav').click(()=>{openContactNav()});
+    $('#top-scores').click(()=>{openTopScoreNav()});
+    $('#start-button').click(()=>{startDidTouch()});
+    $('#close-enter-name').click(()=>{closeEnterNameNav()});
+    $('#close-contact').click(()=>{closeContactNav()});
+    $('#close-login').click(()=>{closeLoginNav()});
+    $('#close-top-score').click(()=>{closeTopScoreNav()});
+    document.addEventListener("click", closeAllSelect);
+}
+
 $(document).ready(
     function(){
-        document.addEventListener("click", closeAllSelect);
+        addListener();
         resetSnake()
         $('#game').addClass('canvas-blur');
 

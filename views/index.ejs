@@ -20,7 +20,7 @@
             <a href="#header"><img class="logo" src="/library/images/logo.ico" alt="logo"></a>
             <a href="#header" class="title">Basic Snake</a>
             <ul class="main-nav" id="top-navigation">
-                <li><a href="#" onclick="openContactNav()">Contact</a></li>
+                <li><a href="#" id="contact-nav" >Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -42,14 +42,14 @@
                         <p id="third-place-name"></p>
                     </li>
                 </ul>
-                <a class="btn top-score" onclick="openTopScoreNav()">Top 8</a>
+                <a class="btn top-score" id="top-scores">Top 8</a>
             </div>
 
             <div class="col span-3-of-5 game-content">
                 <canvas width="660" height="480" id="game"></canvas>
                 <div class="start-game">
                     <h1 id="noti-text"></h1>
-                    <a href="#" class="btn start-button" id="start-button" onclick="startDidTouch()">Start</a>
+                    <a href="#" class="btn start-button" id="start-button" >Start</a>
                 </div>
                 <div class="background-game"> </div>
                 <div class="option-game">
@@ -87,7 +87,7 @@
             <div id="top-score-overlay" class="top-score-overlay">
                 <div class="title">
                     <h2>Top 8 Highest Score</h2>
-                    <a href="#" class="closebtn" onclick="closeTopScoreNav()">&times;</a>
+                    <a href="#" class="closebtn" id="close-top-score">&times;</a>
                 </div>
                 <div class="container">
                     <table>
@@ -105,7 +105,7 @@
             <div id="contact-overlay" class="contact-overlay">
                 <div class="title">
                     <h2>Contact</h2>
-                    <a href="#" class="closebtn" onclick="closeContactNav()">&times;</a>
+                    <a href="#" class="closebtn" id="close-contact">&times;</a>
                 </div>
                 <div class="container">
                     <p>About me</p>
@@ -141,7 +141,7 @@
             <div id="login-overlay" class="login-overlay">
                 <div class="title">
                     <h2>Login</h2>
-                    <a href="#" class="closebtn" onclick="closeLoginNav()">&times;</a>
+                    <a href="#" class="closebtn" id="close-login">&times;</a>
                 </div>
                 <div class="container">
                     
@@ -152,7 +152,7 @@
             <div id="enter-name-overlay" class="enter-name-overlay">
                 <div class="title">
                     <h2>Enter Your Name</h2>
-                    <a href="#" class="closebtn" onclick="closeEnterNameNav()">&times;</a>
+                    <a href="#" class="closebtn" id="close-enter-name">&times;</a>
                 </div>
                 <div class="container">
                     <form id="enter-name">
