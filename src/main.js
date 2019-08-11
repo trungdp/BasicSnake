@@ -485,18 +485,19 @@ function drawSnake() {
 }
 
 $( "#enter-name" ).submit(function( event ) {
+    event.preventDefault();
     if ($("#input-name" ).val()) {
-        closeEnterNameNav();
         var name = $("#input-name" ).val().split(' ')[0];
         $("#top-navigation").prepend('<li><a href="#" onclick="openEnterNameNav()" id="user-name">' + name + '</a></li>');
         $("#input-name" ).val("");
+        closeEnterNameNav();
         return;
     }
     $("#input-name-noti").text( "Please Enter Your Name" ).show().fadeOut( 3000 );
-    event.preventDefault();
 });
 
 $('#form-feedback').submit(event => {
+    event.preventDefault();
     if (($('#feedback-area').val() != null && $('#feedback-area').val() != "") &&
         ($("#user-name").text() != null && $("#user-name").text() != "")) {
         $.post('/feedback', 
@@ -505,7 +506,6 @@ $('#form-feedback').submit(event => {
     } else {
         alert('Enter your name and feedback to send feedback!');
     }
-    event.preventDefault();
 })
 
 function startDidTouch(){
@@ -581,7 +581,6 @@ $(document).ready(
         addListener();
         resetSnake()
         $('#game').addClass('canvas-blur');
-
         $.get('/top-score', fillTopScore);
     }
 )
