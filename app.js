@@ -18,9 +18,6 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-// app.get("/top-score", function(req, res) {
-//     res.render("index");
-// });
 app.get('/top-score', function (req, res) {
     response = {
         data:[{name:"Trung",score:1234},
@@ -31,19 +28,7 @@ app.get('/top-score', function (req, res) {
     res.end(JSON.stringify(response));
 })
 
-// app.get('/feedback', function (req, res) {
-//     response = {
-//         data:[{name:"Trung",score:1234},
-//         {name:"Kha",score:1233},
-//         {name:"Trí",score:1232},
-//         {name:"Bảo",score:1231},
-//         {name:"Định",score:1230}]}
-//     console.log(response);
-//     res.end(JSON.stringify(response));
-// })
-
 app.post('/feedback',urlencodedParser, function (req, res) {
-    // Prepare output in JSON format  
     response = {
         feedback: req.body.feedback,
     };
@@ -60,5 +45,7 @@ app.post('/user-score',urlencodedParser, function (req, res) {
     console.log(response);
     res.end(JSON.stringify(response));
 })
+
+var database = require('./database/database');
 
 server.listen(process.env.PORT || 3000);

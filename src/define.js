@@ -13,7 +13,7 @@ module.exports = {
 
     //***********************************************************************************
     //database connect string
-    url : "mongodb+srv://trung:Trungtrs1998@dlchat-o6dwn.mongodb.net/test?retryWrites=true",
+    url : "mongodb+srv://trungtrs:Trungtrs1998@@cluster0-hc27e.azure.mongodb.net/test?retryWrites=true&w=majority",
     //***********************************************************************************
 
     //***********************************************************************************

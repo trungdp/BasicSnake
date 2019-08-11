@@ -1,20 +1,40 @@
-var sql = require("mssql");
+// var MongoClient = require('mongodb').MongoClient;
+// const Define = require('../src/define');
+// var dbName = 'DLChat'
+// var url = Define.url;
 
-// config for your database
-var config = {
-    "user": process.env.DB_USER || 'sa',
-    "password": process.env.DB_PASS || 'Trungtrs1998@',
-    "server": process.env.DB_HOST || 'localhost',
-    "database": process.env.DB_NAME || 'dluchat',
-    "port":process.env.PORT || 1401,
-    "dialect": "mssql",
-    "dialectOptions": {
-        "instanceName": "sqlserver1"
-    }
-};
 
-module.exports = sql.connect(config, function (err) {
-    if (err) {
-        console.log(err);
+// var mongoose = require('mongoose');
+// mongoose.connect("mongodb+srv://trungtrs:Trungtrs1998@@cluster0-hc27e.azure.mongodb.net/test?retryWrites=true&w=majority/basicsnake");
+
+// var db = mongoose.connection;
+
+// db.on('error', console.error.bind(console, 'connection error:'));
+
+// db.once('open', function() {
+//   console.log("Connection Successful!");
+// });
+
+
+
+let mongoose = require('mongoose');
+
+const server = 'mongodb+srv://trungtrs:Trungtrs1998@cluster0-hc27e.azure.mongodb.net/test?retryWrites=true&w=majority'; // REPLACE WITH YOUR DB SERVER
+const database = 'basicsnake';
+
+class Database {
+    constructor() {
+        this._connect()
     }
-});
+    _connect() {
+        mongoose.connect(`${server}/${database}`)
+            .then(() => {
+                console.log('Database connection successful')
+            })
+            .catch(err => {
+                console.error('Database connection error')
+            })
+    }
+}
+
+module.exports = new Database()
