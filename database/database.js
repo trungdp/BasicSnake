@@ -9,7 +9,7 @@ class Database {
         this._connect()
     }
     _connect() {
-        mongoose.connect(`${server}/${database}`)
+        mongoose.connect(`${server}/${database}`,{ useNewUrlParser: true })
             .then(() => {
                 console.log('Database connection successful')
             })
