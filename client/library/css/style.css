@@ -379,31 +379,6 @@ canvas {
     color: #cccccc;
 }
 
-/* .game-control .btn {
-    display: inline-block;
-    position: relative;
-    width: 40%;
-    font-size: 150%;
-    padding: 4px;
-} */
-
-.game-control .btn:hover .tooltiptext,
-.game-control .btn:active .tooltiptext {
-    visibility: visible;
-}
-
-.game-control .btn .tooltiptext {
-    visibility: hidden;
-    background-color: black;
-    color: #cccccc;
-    text-align: center;
-    border-radius: 5px;
-    position: absolute;
-    top: 50px;
-    font-size: 50%;
-    white-space: nowrap;
-}
-
 .custom-select {
     margin: 10px 0px 10px 50px;
     position: relative;

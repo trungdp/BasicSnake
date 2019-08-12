@@ -1,0 +1,92 @@
+@media only screen and (max-width:1200px){
+    html{
+        font-size: 18px;
+    }
+    #overlay{
+        font-size: 20px;
+    }
+    .contact-overlay .container .social-icons{
+        top: 30%;
+    }
+
+    .info {
+        width: 170px;
+    }
+
+    .game-setting {
+        right: 0px;
+        margin-left: 40px;
+
+    }
+}
+
+@media only screen and (max-width:1023px){
+    header nav .title {
+        font-size: 130%;
+        margin-top: 20px;
+    }
+    .main-nav{
+        font-size: 100%;
+    }
+
+    .info {
+        font-size: 17px;
+        display: none;
+    }
+
+    .game-content {
+        margin-left: 100px;
+    }
+
+    .game-setting {
+        font-size: 17px;
+        margin-left: 80px;
+    }
+
+    .custom-select {
+        margin-left: 30px;
+        position: relative;
+        text-align: center
+    }
+}
+
+@media only screen and (max-width:767px){
+    .contact-overlay .container .information{
+        margin: 0px 25px;
+    }
+
+    .info {
+        font-size: 17px;
+        display: none;
+    }
+
+    .game-setting {
+        display: none;
+    }
+
+    .game-content {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .top-score-overlay a {
+        font-size: 20px
+    }
+
+    .top-score-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+
+    .contact-overlay a {
+        font-size: 20px
+    }
+
+    .contact-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}

@@ -21,7 +21,7 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-app.get('/top-score', function (req, res) {
+app.get('/get-top-score', function (req, res) {
     User.find({}).sort({ 'score':-1}).then(docs=>{
         response = {data:[]};
         docs.slice(0,8).forEach((item,index)=>{
@@ -31,7 +31,7 @@ app.get('/top-score', function (req, res) {
     });
 })
 
-app.post('/user-score',urlencodedParser, function (req, res) {
+app.post('/post-user-score',urlencodedParser, function (req, res) {
     function getTopScore(){
         User.find({}).sort({ 'score':-1}).then(docs=>{
             response = {data:[]};
@@ -59,7 +59,7 @@ app.post('/user-score',urlencodedParser, function (req, res) {
     });
 })
 
-app.post('/feedback',urlencodedParser, function (req, res) {
+app.post('/post-feedback',urlencodedParser, function (req, res) {
     response = {
         content: req.body.content,
     };

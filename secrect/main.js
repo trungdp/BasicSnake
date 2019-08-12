@@ -500,7 +500,7 @@ $('#form-feedback').submit(event => {
     event.preventDefault();
     if (($('#feedback-area').val() != null && $('#feedback-area').val() != "") &&
         ($("#user-name").text() != null && $("#user-name").text() != "")) {
-        $.post('/feedback', 
+        $.post('/post-feedback', 
                 { name: $("#user-name").text(), content: $('#feedback-area').val() },
             sendFeedback());
     } else {
@@ -562,7 +562,7 @@ function gameOver(){
 
     $('#start-button').removeClass('disabled');
     $('.game-control').removeClass('disabled');
-    $.post('/user-score', { name: $('#user-name').text(), score: parseInt($("#user-score").text()) }, postScore);
+    $.post('/post-user-score', { name: $('#user-name').text(), score: parseInt($("#user-score").text()) }, postScore);
 }
 
 function addListener(){
@@ -581,6 +581,6 @@ $(document).ready(
         addListener();
         resetSnake();
         $('#game').addClass('canvas-blur');
-        $.get('/top-score', fillTopScore);
+        $.get('/get-top-score', fillTopScore);
     }
 )
