@@ -36,13 +36,14 @@ app.get('/get-top-score', function (req, res) {
 })
 
 app.post('/post-user-score',urlencodedParser, function (req, res) {
-    function getTopScore(){
-        User.find({}).sort({ 'score':-1}).then(docs=>{
-            response = {data:[]};
-            res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
             res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         
+    function getTopScore(){
+        User.find({}).sort({ 'score':-1}).then(docs=>{
+            response = {data:[]};
+            
             docs.slice(0,8).forEach((item,index)=>{
                 response.data.push({name:item.name,score:item.score});
             });
