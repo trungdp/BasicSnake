@@ -27,6 +27,10 @@ app.get('/get-top-score', function (req, res) {
         docs.slice(0,8).forEach((item,index)=>{
             response.data.push({name:item.name,score:item.score});
         });
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        
         res.end(JSON.stringify(response));
     });
 })
