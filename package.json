@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.5.4",
+    "mongoose": "^5.7.5",
     "mssql": "^5.1.0",
     "nodemon": "^1.19.1"
   },
