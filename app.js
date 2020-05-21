@@ -21,6 +21,10 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
+app.get("/test", function(req, res) {
+    return res.send("Test.");
+});
+
 app.get('/get-top-score', function (req, res) {
     User.find({}).sort({ 'score':-1}).then(docs=>{
         response = {data:[]};
